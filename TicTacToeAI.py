@@ -98,7 +98,7 @@ def minimax(minimax_board, depth, is_maximizing):
         return best_score
     
 def best_move():
-    best_score = -1000
+    best_score = 1000
     move = (-1, -1)
     for row in range(board_rows):
         for col in range(board_cols):
