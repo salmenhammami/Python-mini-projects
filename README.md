@@ -26,7 +26,7 @@ This repository serves as a flexible workspace for exploring Python's ecosystem.
 
 ```bash
 # Clone the repository
-git clone [https://github.com/HammamiSalmen/Python-projects.git](https://github.com/HammamiSalmen/Python-projects.git)
+git clone https://github.com/HammamiSalmen/Python-projects.git
 cd Python-projects
 
 # Set up a virtual environment (optional but recommended)
