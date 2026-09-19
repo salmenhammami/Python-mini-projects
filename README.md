@@ -1,37 +1,48 @@
-# Python Projects
+# Python mini-projects
 
-A practical collection of Python mini-projects.
+Things I built while learning Python — some games, a scraper, and a bit of computer
+vision.
 
-## Overview
+## Computer vision
 
-This repository serves as a flexible workspace for exploring Python's ecosystem. It includes hands-on implementations ranging from workflow automation scripts and web scraping utilities to standalone algorithmic tools and API integrations.
+Three scripts built on YOLOv8. `object_detection_yolo.py` annotates a still image,
+`yolo_webcam.py` does the same live from the webcam, and `car_counter.py` counts
+vehicles crossing a line in a video — YOLO finds them, a mask ignores the parts of the
+frame I don't care about, and SORT tracking keeps the same ID on a car between frames
+so nothing gets counted twice.
 
-## Highlights
+## Games
 
-* **Web Scraping & APIs:** Tools for fetching, parsing, and structuring external web data using popular Python libraries.
-* **Core Logic & Algorithms:** Modular programs showcasing object-oriented design, data structures, and practical problem-solving.
+- **Tic-tac-toe** — Pygame, with a minimax opponent you can't beat
+- **Minesweeper** — recursive flood fill to open the empty regions
+- **Chess**, **Snake** and **Pong** — terminal and turtle versions, written to
+  practise game loops and collision handling
 
-## Tech & Requirements
+## Scraping
 
-* **Language:** Python 3.10+
-* **Dependencies:** Managed via standard library modules and project-specific `requirements.txt` where applicable.
+`WebScraping_YallaKoora_BS4.py` pulls football match data with requests and
+BeautifulSoup and writes it out to CSV.
 
+## Running them
 
-## Getting Started
-
-### Prerequisites
-* Python 3.x installed
-
-### Quick Setup
+The games need nothing but the standard library, apart from tic-tac-toe (Pygame and
+NumPy). For the rest:
 
 ```bash
-# Clone the repository
-git clone https://github.com/HammamiSalmen/Python-projects.git
-cd Python-projects
+python -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+```
 
-# Set up a virtual environment (optional but recommended)
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+The detection scripts expect the YOLO weights in `Yolo-Weights/` one level up —
+Ultralytics downloads them on first run — and the car counter also needs a `video.mp4`
+and a `mask.png`. None of those are in the repo.
 
-# Run any script directly
-python path/to/script.py
+## Credit
+
+`object-detection/SORT.py` isn't mine. It's Alex Bewley's
+[SORT tracker](https://github.com/abewley/sort), GPL-3.0, included unchanged with its
+original header. Everything else here I wrote.
+
+---
+
+**Salmen Hammami** · [GitHub](https://github.com/salmenhammami) · [LinkedIn](https://www.linkedin.com/in/salmenhammami/)
